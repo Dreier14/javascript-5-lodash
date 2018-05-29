@@ -1,14 +1,14 @@
-/*
-  Lodash is a library that can help us clean up our code.  It has many helpful
-  functions in it.  Many of which were so helpful, they have found their way
-  into the core of JavaScript.
-  We can use all that handy functionality by bringing in the
-  lodash library.  The documentation can be found here -> http://lodash.com/, and can be brought into
-  a project either with npm or a cdn.
-  This project is bringing in the file through a cdn.  It will be available for
-  you to use on the _ variable.  They chose _ because it's a short, easy to reference
-  variable.
-*/
+
+  // Lodash is a library that can help us clean up our code.  It has many helpful
+  // functions in it.  Many of which were so helpful, they have found their way
+  // into the core of JavaScript.
+  // We can use all that handy functionality by bringing in the
+  // lodash library.  The documentation can be found here -> http://lodash.com/, and can be brought into
+  // a project either with npm or a cdn.
+  // This project is bringing in the file through a cdn.  It will be available for
+  // you to use on the _ variable.  They chose _ because it's a short, easy to reference
+  // variable.
+
 
 // map, with a property
 //  Map lets us take an array of objects, and a string referencing a common property,
@@ -282,11 +282,12 @@ const myEmployees = [
   }
 ];
 
-const myEmployeesAddresses = 0; // use map to get addresses here.
+const myEmployeesAddresses =  _.map(myEmployees, 'address'); // use map to get addresses here.
 
+console.log(myEmployeesAddresses);
 // Now we want to use map to get an array of ages of the employees.
 
-const myEmployeesAges = 0; // use map to get ages here.
+const myEmployeesAges = _.map(myEmployees, 'age'); // use map to get ages here.
 
 // union
 //  Union lets us take 2 arrays, and create a new array that only has 1 entry for
@@ -326,7 +327,7 @@ const breeFriendsEmails = [
   "dave@gmail.com"
 ];
 
-const listToSendEmailsTo = 0; // Put lodash here to make list of the union of the two address.
+const listToSendEmailsTo = _.union(bobFriendsEmails, breeFriendsEmails); // Put lodash here to make list of the union of the two address.
 
 // intersection
 //  Intersection lets us take two arrays, and create a new array that only
@@ -339,7 +340,7 @@ const listToSendEmailsTo = 0; // Put lodash here to make list of the union of th
 // Bob and Bree have decided that instead of inviting everyone they know to their
 // party. They are instead only going to invite those people that they both know.
 
-const listOfSharedEmails = 0; // Use lodash to create the list that are in both lists
+const listOfSharedEmails = _.intersection(bobFriendsEmails, breeFriendsEmails); // Use lodash to create the list that are in both lists
 
 // groupBy
 //  Group By lets us take an array of objects, and group then into groups based
@@ -403,7 +404,7 @@ const purchases = [
   { month: "February", price: 23.65 }
 ];
 
-const purchasesByMonth = 0; // Use groupBy to group the purchases by the month that they were made.
+const purchasesByMonth = _.groupBy(purchases, 'month'); // Use groupBy to group the purchases by the month that they were made.
 
 // Bonus Points
 const totalByMonth = 0; // Use the grouped purchasesByMonth and reduce to create a totalByMonth object.
